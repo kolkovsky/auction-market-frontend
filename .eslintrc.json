@@ -1,0 +1,8 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-empty": "error",
+    "arrow-spacing": "error",
+    "quotes": "warn"
+  }
+}

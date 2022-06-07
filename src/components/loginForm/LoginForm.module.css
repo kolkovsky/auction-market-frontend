@@ -1,0 +1,13 @@
+.loginFormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid red;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.textField {
+    margin-bottom: 30px;
+}
