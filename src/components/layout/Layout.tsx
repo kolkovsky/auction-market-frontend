@@ -1,13 +1,16 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import Header from "../header/Header";
-import styles from "./Header.module.css";
+import ParentModal from "../modal/ParentModal";
+import styles from "./Layout.module.css";
 
 const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            {children}
+            <Container className={styles.contentContainer}>
+                {children}
+            </Container>
         </>
     );
 };

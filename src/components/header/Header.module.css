@@ -1,6 +1,27 @@
 .headerContainer {
-    display: block;
+    display: flex;
     width: 100%;
     height: 40px;
+    padding: 30px 20px 30px 20px;
     background-color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headerLogoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headerListLink {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.headerLink {
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px;
 }

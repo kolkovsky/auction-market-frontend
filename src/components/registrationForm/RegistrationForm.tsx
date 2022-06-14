@@ -1,10 +1,11 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, MenuItem, Typography } from "@mui/material";
 import React from "react";
 import styles from "./LoginForm.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { Roles } from "../../utils/constants";
 
 const RegistrationScheme = Yup.object().shape({
     name: Yup.string().min(4, "Too short!").max(100, "Too long!").required("Required!"),
@@ -40,6 +41,43 @@ const RegistrationForm = () => {
                 onSubmit={formik.handleSubmit}
             >
                 <TextField
+                    id="name"
+                    name="name"
+                    label="Username"
+                    type="name"
+                    className={styles.textField}
+                    value={formik.values.name}
+                    onChange={formik.handleChange}
+                    error={formik.touched.name && Boolean(formik.errors.name)}
+                    // @ts-ignore
+                    helperText={formik.touched.name && formik.errors.name}
+                />
+
+                <TextField
+                    id="role"
+                    name="role"
+                    label="User role"
+                    select
+                    className={styles.textField}
+                    value={formik.values.role}
+                    onChange={formik.handleChange}
+                    error={formik.touched.role && Boolean(formik.errors.role)}
+                    // @ts-ignore
+                    helperText={formik.touched.role && formik.errors.role}
+                >
+                    <MenuItem value={Roles.AUCTIONEER}>
+                        {Roles.AUCTIONEER}
+                    </MenuItem>
+                    <MenuItem value={Roles.CREATOR}>
+                        {Roles.CREATOR}
+                    </MenuItem>
+                    <MenuItem value={Roles.USER}>
+                        {Roles.USER}
+                    </MenuItem>
+                </TextField>
+
+
+                <TextField
                     id="email"
                     name="email"
                     label="Email"
@@ -71,7 +109,7 @@ const RegistrationForm = () => {
                 />
 
                 <Button type="submit" color="primary">
-                    Login
+                    Register
                 </Button>
             </form>
         </Box>

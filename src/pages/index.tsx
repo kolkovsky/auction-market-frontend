@@ -3,17 +3,27 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { Button } from "@mui/material"
-import Header from "../components/header/Header"
+import Layout from "../components/layout/Layout"
 
 const Home = () => {
     return (
-        <Container>
-            <Header />
+        <Layout>
             <Box>
-                <Typography>Login Form</Typography>
-                <Button>Login</Button>
+                <Typography component="h2">
+                    Welcome to Auction Market page
+                </Typography>
             </Box>
-        </Container>
+            <Box>
+                <Typography component="h4">
+                    Tokens
+                </Typography>
+            </Box>
+            <Box>
+                <Typography component="h4">
+                    Auctions
+                </Typography>
+            </Box>
+        </Layout>
     )
 };
 
